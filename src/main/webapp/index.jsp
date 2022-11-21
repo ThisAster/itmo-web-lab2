@@ -42,7 +42,7 @@
           <span>Abulfatov</span>
           Ruslan
         </h1>
-        <h2>P32312, var: 3201</h2>
+        <h2>P32312, var: 66631213</h2>
       </header>
     </td>
   </tr>
