@@ -31,7 +31,8 @@
     <%
       }
     %>
-  ]
+  ];
+  drawGraph();
 </script>
 <table>
   <tr>
@@ -61,35 +62,35 @@
           <table title="enter a value y" id="y">
             <tr>
               <td>
-                <button type="button" value="-2" onclick="setY('-2')">-2</button>
+                <button type="button" value="-2" onclick="setY('-2', this)">-2</button>
               </td>
               <td>
-                <button type="button" value="-1.5" onclick="setY('-1.5')">-1.5</button>
+                <button type="button" value="-1.5" onclick="setY('-1.5', this)">-1.5</button>
               </td>
               <td>
-                <button type="button" value="-1" onclick="setY('-1')">-1</button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button type="button" value="-0.5" onclick="setY('-0.5')">-0.5</button>
-              </td>
-              <td>
-                <button type="button" value="0" onclick="setY('0')">0</button>
-              </td>
-              <td>
-                <button type="button" value="0.5" onclick="setY('0.5')">0.5</button>
+                <button type="button" value="-1" onclick="setY('-1', this)">-1</button>
               </td>
             </tr>
             <tr>
               <td>
-                <button type="button" value="1" onclick="setY('1')">1</button>
+                <button type="button" value="-0.5" onclick="setY('-0.5', this)">-0.5</button>
               </td>
               <td>
-                <button type="button" value="1.5" onclick="setY('1.5')">1.5</button>
+                <button type="button" value="0" onclick="setY('0', this)">0</button>
               </td>
               <td>
-                <button type="button" value="2" onclick="setY('2')">2</button>
+                <button type="button" value="0.5" onclick="setY('0.5', this)">0.5</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button type="button" value="1" onclick="setY('1', this)">1</button>
+              </td>
+              <td>
+                <button type="button" value="1.5" onclick="setY('1.5', this)">1.5</button>
+              </td>
+              <td>
+                <button type="button" value="2" onclick="setY('2', this)">2</button>
               </td>
             </tr>
             <input type="hidden" name="y_coord" id="y_value">
@@ -99,22 +100,21 @@
           <label id="labelR" for="r">R:</label>
           <table title="enter a value r" id="r">
             <tr>
-              <td>
-                <button type="button" value="1" onclick="setR('1')">1</button>
+                <input type="checkbox" value="1" id="r1" onclick="setR('1')">1</input>
               </td>
               <td>
-                <button type="button" value="2" onclick="setR('2')">2</button>
+                <input type="checkbox" value="2" id="r2" onclick="setR('2')">2</input>
               </td>
               <td>
-                <button type="button" value="3" onclick="setR('3')">3</button>
+                <input type="checkbox" value="3" id="r3" onclick="setR('3')">3</input>
               </td>
             </tr>
             <tr>
               <td>
-                <button type="button" value="4" onclick="setR('4')">4</button>
+                <input type="checkbox" value="4" id="r4" onclick="setR('4')">4</input>
               </td>
               <td>
-                <button type="button" value="5" onclick="setR('5')">5</button>
+                <input type="checkbox" value="5" id="r5" onclick="setR('5')">5</input>
               </td>
             </tr>
             <input type="hidden" name="r_coord" id="r_value">
@@ -126,7 +126,7 @@
         </form>
         <div>
           <form id="clear_form" action="<%= request.getContextPath()%>" method="GET">
-            <button style="width: 160px" type="submit" name="clear" id="clear" value="clear">clear</button>
+            <button style="width: 160px" type="submit" name="clear" id="clear" value="clear" onclick="clean()">clear</button>
           </form>
         </div>
 
