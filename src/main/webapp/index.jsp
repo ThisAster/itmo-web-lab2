@@ -100,25 +100,26 @@
           <label id="labelR" for="r">R:</label>
           <table title="enter a value r" id="r">
             <tr>
-                <input type="checkbox" value="1" id="r1" onclick="setR('1')">1</input>
+              <td>
+                <input type="checkbox" value="1" id="r1" onclick="rCheckboxClicked(this)">1</input>
               </td>
               <td>
-                <input type="checkbox" value="2" id="r2" onclick="setR('2')">2</input>
+                <input type="checkbox" value="2" id="r2" onclick="rCheckboxClicked(this)">2</input>
               </td>
               <td>
-                <input type="checkbox" value="3" id="r3" onclick="setR('3')">3</input>
+                <input type="checkbox" value="3" id="r3" onclick="rCheckboxClicked(this)">3</input>
               </td>
             </tr>
             <tr>
               <td>
-                <input type="checkbox" value="4" id="r4" onclick="setR('4')">4</input>
+                <input type="checkbox" value="4" id="r4" onclick="rCheckboxClicked(this)">4</input>
               </td>
               <td>
-                <input type="checkbox" value="5" id="r5" onclick="setR('5')">5</input>
+                <input type="checkbox" value="5" id="r5" onclick="rCheckboxClicked(this)">5</input>
               </td>
             </tr>
-            <input type="hidden" name="r_coord" id="r_value">
           </table>
+          <input type="hidden" name="r_coord" id="r_value">
         </div>
         <div>
           <button type="button" id="sumbitButton" class="actionButton" onclick="funcClick()">check point</button>
