@@ -126,6 +126,17 @@ function setActiveButton(parentParameter, element) {
     }
 }
 
+function setActiveCheckbox(parentParameter, element) {
+    const parameterElement = document.getElementById(parentParameter);
+    const checkboxes = parameterElement.getElementsByTagName("input");
+    for (const checkbox of checkboxes) {
+        checkbox.checked = false;
+    }
+    if (element) {
+        element.checked = true;
+    }
+}
+
 function setY(newValue, element) {
     const yButton = document.getElementById("y_value");
     yButton.value = newValue;
@@ -135,6 +146,17 @@ function setY(newValue, element) {
 function setX(newValue) {
     const xInput = document.getElementById("x");
     xInput.value = newValue;
+}
+
+function rCheckboxClicked(checkbox){
+    let valueToSet;
+    if(!checkbox || !checkbox.checked){
+        valueToSet = '';
+    } else{
+        valueToSet = checkbox.value;
+    }
+    setR(valueToSet);
+    setActiveCheckbox("r", checkbox);
 }
 
 function setR(newValue) {
