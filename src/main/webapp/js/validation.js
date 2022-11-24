@@ -7,6 +7,11 @@ function funcClick() {
     const y = document.getElementById("y_value").value;
     const r = rValue;
 
+    if (!rValue) {
+        alert("Please select a value for R first");
+        return;
+    }
+
     if(y*y > r*r*1.45*1.45){
         alert("Y is out of range");
         return;
