@@ -57,7 +57,7 @@ public class AreaCheckServlet extends HttpServlet {
         Results<Point> results = ((Results<Point>) servletContext.getAttribute("Collection"));
 
         results.add(point);
-        request.getRequestDispatcher( "table.jsp").forward(request,response);
+        request.getRequestDispatcher( "/table.jsp").forward(request,response);
 
     }
 }

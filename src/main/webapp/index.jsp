@@ -20,6 +20,9 @@
 <script>
   const POINTS = [
     <%
+      if (results == null) {
+        results = new Results<Point>();
+      } else {
       for (int i = 0; i < results.size(); i++) {
     %>
     {
@@ -28,7 +31,7 @@
       r: <%= results.get(i).getR() %>,
     },
     <%
-      }
+      }}
     %>
   ];
   drawGraph();
