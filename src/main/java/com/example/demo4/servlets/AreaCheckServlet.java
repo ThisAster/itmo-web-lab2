@@ -41,9 +41,6 @@ public class AreaCheckServlet extends HttpServlet {
             return;
         }
 
-
-
-        final long end = System.nanoTime();
         Triangle triangle = new Triangle();
         Rectangle rectangle = new Rectangle();
         Sector sector = new Sector();

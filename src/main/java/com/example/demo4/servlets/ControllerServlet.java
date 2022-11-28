@@ -11,7 +11,6 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "", loadOnStartup = 0, name = "ControllerServlet")
 public class ControllerServlet extends HttpServlet {
-    private final String methodGet = "GET";
 
     @Override
     public void init() throws ServletException {
