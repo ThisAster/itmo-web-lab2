@@ -3,7 +3,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
   ServletContext servletContext = request.getServletContext();
-  Results<Point> results = ((Results<Point>) servletContext.getAttribute("Collection"));
+  Results results = ((Results) servletContext.getAttribute("Collection"));
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@
   const POINTS = [
     <%
       if (results == null) {
-        results = new Results<Point>();
+        results = new Results();
       } else {
       for (int i = 0; i < results.size(); i++) {
     %>

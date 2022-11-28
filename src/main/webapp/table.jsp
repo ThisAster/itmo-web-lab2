@@ -1,9 +1,8 @@
-<%@ page import="com.example.demo4.models.Point" %>
 <%@ page import="com.example.demo4.models.Results" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     ServletContext servletContext = request.getServletContext();
-    Results<Point> results = ((Results<Point>) servletContext.getAttribute("Collection"));
+    Results results = ((Results) servletContext.getAttribute("Collection"));
 %>
 <html>
 <head>
