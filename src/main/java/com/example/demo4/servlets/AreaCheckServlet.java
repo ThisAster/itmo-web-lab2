@@ -51,10 +51,10 @@ public class AreaCheckServlet extends HttpServlet {
 
         ServletContext servletContext = request.getServletContext();
         if(servletContext.getAttribute("Collection") == null){
-            servletContext.setAttribute("Collection",new Results<Point>());
+            servletContext.setAttribute("Collection",new Results());
 
         }
-        Results<Point> results = ((Results<Point>) servletContext.getAttribute("Collection"));
+        Results results = ((Results) servletContext.getAttribute("Collection"));
 
         results.add(point);
         request.getRequestDispatcher( "/table.jsp").forward(request,response);

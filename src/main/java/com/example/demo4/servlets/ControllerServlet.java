@@ -1,6 +1,5 @@
 package com.example.demo4.servlets;
 
-import com.example.demo4.models.Point;
 import com.example.demo4.models.Results;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,7 +15,7 @@ public class ControllerServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        getServletContext().setAttribute("Collection", new Results<Point>());
+        getServletContext().setAttribute("Collection", new Results());
     }
 
     @Override
@@ -26,17 +25,17 @@ public class ControllerServlet extends HttpServlet {
         String r = req.getParameter("r_coord");
         String clear = req.getParameter("clear");
 
-        Results<Point> results = (Results<Point>) getServletContext().getAttribute("Collection");
+        Results results = (Results) getServletContext().getAttribute("Collection");
         if (x != null && y != null && r != null) {
             if (results == null) {
-                getServletContext().setAttribute("Collection", new Results<Point>());
+                getServletContext().setAttribute("Collection", new Results());
             }
             getServletContext().getRequestDispatcher("/area").forward(req, resp);
         } else if (clear != null) {
             if (results != null) {
                 results.clear();
             } else {
-                getServletContext().setAttribute("Collection", new Results<Point>());
+                getServletContext().setAttribute("Collection", new Results());
             }
             getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
         } else {
