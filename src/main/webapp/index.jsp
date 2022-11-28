@@ -56,7 +56,7 @@
           <!-- элемент, содержащий текст, при нажатии на который меняется фокус на другой элемент -->
           <label for="x">X:</label>
           <div>
-            <input title="enter a value x" name="x_coord" class="inputX" id="x" type="text" placeholder="range from -5 to 5" maxlength="8" />
+            <input title="enter a value x" name="x_coord" class="inputX" id="x" type="text" placeholder="range from -3 to 5" maxlength="8" />
           </div>
         </div>
         <div id="yTable">
