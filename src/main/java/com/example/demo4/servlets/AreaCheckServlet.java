@@ -36,7 +36,7 @@ public class AreaCheckServlet extends HttpServlet {
             return;
         }
 
-        if (!validator.validate(x, y, (int) r)) {
+        if (!validator.validate(x, y, r)) {
             response.sendError(400, "Invalid value");
             return;
         }
