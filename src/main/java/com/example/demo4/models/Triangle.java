@@ -1,6 +1,6 @@
 package com.example.demo4.models;
 
-public class Triangle extends Shape{
+public class Triangle extends Shape {
 
     @Override
     public boolean checkHit(double x, double y, int r) {
