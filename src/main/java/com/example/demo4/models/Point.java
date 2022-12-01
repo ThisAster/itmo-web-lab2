@@ -5,14 +5,14 @@ import java.time.format.DateTimeFormatter;
 
 public class Point {
     private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-    private double x;
-    private double y;
-    private int r;
-    private final LocalDateTime attemptTime;
-    private final double processTime;
-    private final boolean hit;
+    private Double x;
+    private Double y;
+    private Integer r;
+    private LocalDateTime attemptTime;
+    private Double processTime;
+    private Boolean hit;
 
-    public Point(double x, double y, int r, LocalDateTime attemptTime, double processTime, boolean hit) {
+    public Point(Double x, Double y, Integer r, LocalDateTime attemptTime, Double processTime, Boolean hit) {
         this.x = x;
         this.y = y;
         this.r = r;
@@ -21,27 +21,42 @@ public class Point {
         this.hit = hit;
     }
 
-    public double getX() {
+    public void setProcessTime(long l) {
+        this.processTime = (double) l;
+    }
+
+    public void setHit(Boolean hit) {
+        this.hit = hit;
+    }
+
+    public void setAttemptTime(LocalDateTime now) {
+
+        this.attemptTime = now;
+    }
+
+
+    public Point(){};
+    public Double getX() {
         return x;
     }
 
-    public void setX(float x) {
+    public void setX(Double x) {
         this.x = x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 
-    public void setY(float y) {
+    public void setY(Double y) {
         this.y = y;
     }
 
-    public int getR() {
+    public Integer getR() {
         return r;
     }
 
-    public void setR(int r) {
+    public void setR(Integer r) {
         this.r = r;
     }
 
@@ -49,11 +64,11 @@ public class Point {
         return attemptTime;
     }
 
-    public double getProcessTime() {
+    public Double getProcessTime() {
         return processTime;
     }
 
-    public boolean getHit() {
+    public Boolean getHit() {
         return hit;
     }
 
