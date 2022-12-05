@@ -1,8 +1,5 @@
 package com.example.demo4.models;
 
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -24,7 +21,7 @@ public class Point {
         this.hit = hit;
     }
 
-    public Point(){};
+    public Point(){}
 
     public void setProcessTime(long l) {
         this.processTime = (double) l;
