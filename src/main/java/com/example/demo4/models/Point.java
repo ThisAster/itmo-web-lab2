@@ -1,10 +1,13 @@
 package com.example.demo4.models;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Point {
-    private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private Double x;
     private Double y;
     private Integer r;
@@ -12,7 +15,7 @@ public class Point {
     private Double processTime;
     private Boolean hit;
 
-    public Point(Double x, Double y, Integer r, LocalDateTime attemptTime, Double processTime, Boolean hit) {
+    public Point(double x, double y, int r, LocalDateTime attemptTime, double processTime, boolean hit) {
         this.x = x;
         this.y = y;
         this.r = r;
@@ -20,6 +23,8 @@ public class Point {
         this.processTime = processTime;
         this.hit = hit;
     }
+
+    public Point(){};
 
     public void setProcessTime(long l) {
         this.processTime = (double) l;
@@ -34,8 +39,6 @@ public class Point {
         this.attemptTime = now;
     }
 
-
-    public Point(){};
     public Double getX() {
         return x;
     }

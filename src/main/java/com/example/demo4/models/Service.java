@@ -1,14 +1,12 @@
 package com.example.demo4.models;
 
 import com.example.demo4.tools.CheckHitManager;
-
 import java.time.LocalDateTime;
 
 public class Service {
     Triangle triangle = new Triangle();
     Rectangle rectangle = new Rectangle();
     Sector sector = new Sector();
-
     public Point createPoint(Double x, Double y, Integer r, long start) {
         Point point = new Point();
 
