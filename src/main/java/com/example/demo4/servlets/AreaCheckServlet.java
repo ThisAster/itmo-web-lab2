@@ -43,7 +43,7 @@ public class AreaCheckServlet extends HttpServlet {
         }
 
         point = service.createPoint(x, y, r, start, isClick);
-        if (!point.isClicked()) {
+        if (!point.getIsClick()) {
             if (!validator.validate(x, y, r)) {
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 request.getRequestDispatcher("/error.jsp").forward(request, response);

@@ -14,8 +14,8 @@ public class Service {
         point.setX(x);
         point.setY(y);
         point.setR(r);
-        point.setClicked(isClick);
-        point.setProcessTime(System.nanoTime()-start);
+        point.setIsClick(isClick);
+        point.setProcessTime((double) (System.nanoTime()-start));
         point.setAttemptTime(LocalDateTime.now());
         point.setHit(new CheckHitManager(x, y, r).hasHit(sector, rectangle, triangle));
         return point;
