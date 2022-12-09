@@ -3,8 +3,8 @@ package com.example.demo4.tools;
 public class Validation {
     private final Double x_max = 5D;
     private final Double x_min = -3D;
-    private final Double y_max = 3D;
-    private final Double y_min = -5D;
+    private final Double y_max = 2D;
+    private final Double y_min = -2D;
     private final Integer r_max = 5;
     private final Integer r_min = 1;
 

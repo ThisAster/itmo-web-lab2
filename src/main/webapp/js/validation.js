@@ -7,10 +7,11 @@ function enterOff() {
         b = "";
         return a
     }
-};
+}
 
 function funcClick() {
     const x = document.getElementById("x").value;
+    const y = document.getElementById("y_value").value;
     if (!rValue) {
         alert("Please select a value for R first");
         return;
@@ -22,8 +23,16 @@ function funcClick() {
         return;
     }
 
+
+
     if (!domainFloat(parseFloat(x), -3.01, 5.001 )) {
         alert("X value out of bounds");
+        document.getElementById("x").value = "";
+        return;
+    }
+
+    if(!validationFloat(y)) {
+        alert("Y not Number");
         document.getElementById("x").value = "";
         return;
     }
