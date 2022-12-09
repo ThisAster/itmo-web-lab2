@@ -169,6 +169,12 @@ function setR(newValue) {
     localStorage.setItem(rCacheKey, newValue);
 }
 
+function setClick(newValue) {
+    const clickInput = document.getElementById("isClick_value");
+    clickInput.value = newValue;
+}
+
+setClick("false");
 
 drawGraph();
 
@@ -184,17 +190,9 @@ canvas.addEventListener('click', (e) => {
     const yClicked =
         Math.round(((-2 * e.offsetY) / height + 1) * rValue * 1.5 * 100) / 100;
 
-    if(xClicked>5||xClicked<-3) {
-        alert("x coordinate out of range(-3,5)");
-        return;
-    }
-    if(yClicked>3||yClicked<-5) {
-        alert("y coordinate out of range(-5,3)");
-        return;
-    }
-
     setX(`${xClicked}`);
     setY(`${yClicked}`);
+    setClick("true");
 
     document.forms["input-form"].submit();
 });
