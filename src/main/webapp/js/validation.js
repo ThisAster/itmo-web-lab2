@@ -19,7 +19,7 @@ function funcClick() {
         return;
     }
 
-    if (!domainFloat(parseFloat(x), -3., 5. )) {
+    if (!domainFloat(parseFloat(x), -3.01, 5.001 )) {
         alert("X value out of bounds");
         document.getElementById("x").value = "";
         return;
