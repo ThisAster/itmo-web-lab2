@@ -1,8 +1,9 @@
-<%@ page import="com.example.demo4.models.Results" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.example.demo4.models.Point" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     ServletContext servletContext = request.getServletContext();
-    Results results = ((Results) servletContext.getAttribute("Collection"));
+    ArrayList<Point> results = (ArrayList<Point>) servletContext.getAttribute("Collection");
 %>
 <html>
 <head>
@@ -22,6 +23,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <script defer src="<%= request.getContextPath() %>/js/grapher.js"></script>
     <script defer src="<%= request.getContextPath() %>/js/validation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/superagent@8.0.0/dist/superagent.min.js"></script>
 </head>
 <body>
 <table>
@@ -51,22 +53,25 @@
             <table id="results" style="left: 21%;position: absolute; bottom: 70.5%;">
                 <tbody>
                 <tr>
-                    <th style="width: 213px;" id="xRow">
+                    <th style="width: 194px;" id="xRow">
                         X
                     </th>
-                    <th style="width: 213px;" id="yRow">
+                    <th style="width: 194px;" id="yRow">
                         Y
                     </th>
-                    <th style="width: 213px;" id="rRow">
+                    <th style="width: 194px;" id="rRow">
                         R
                     </th>
-                    <th style="width: 213px;" id="resultRow">
+                    <th style="width: 194px;" id="formatSendRow">
+                        Sending format
+                    </th>
+                    <th style="width: 194px;" id="resultRow">
                         Result
                     </th>
-                    <th style="width: 213px;" id="attempttimeRow" style="width: 185px">
+                    <th style="width: 194px;" id="attempttimeRow" style="width: 185px">
                         Attempt time
                     </th>
-                    <th style="width: 213px;" id="processingtimeRow">
+                    <th style="width: 194px;" id="processingtimeRow">
                         Processing time
                     </th>
                 </tr>
