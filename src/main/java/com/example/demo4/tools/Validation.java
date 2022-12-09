@@ -12,13 +12,13 @@ public class Validation {
         return validateX(x, x_max, x_min) && validateY(y, y_max, y_min) && validateR(r, r_max, r_min);
     }
     private boolean validateX(double x, double x_max, double x_min) {
-        return x > x_min && x < x_max;
+        return x >= x_min && x <= x_max;
     }
     private boolean validateY(double y, double y_max, double y_min){
-        return y > y_min && y < y_max;
+        return y >= y_min && y <= y_max;
     }
     private boolean validateR(int r, int r_max, int r_min){
-        return r > r_min && r < r_max;
+        return r >= r_min && r <= r_max;
     }
 }
 
