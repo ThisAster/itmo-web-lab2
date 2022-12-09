@@ -37,6 +37,7 @@ public class Point {
                 "\"hit\":" + "\"" + this.getHit() + "\"" +
                 "}";
     }
+
     public String block() {
         return
                 "<td class=\"xResult\">" + x + "</td>" +
