@@ -19,21 +19,9 @@ function funcClick() {
         return;
     }
 
-    if(!validationFloat(y)) {
-        alert("Y not Number");
-        document.getElementById("x").value = "";
-        return;
-    }
-
     if (!domainFloat(parseFloat(x), -3., 5. )) {
         alert("X value out of bounds");
         document.getElementById("x").value = "";
-        return;
-    }
-
-    if (!domainFloat(parseFloat(y), -2., 2.)) {
-        alert("Y value out of bounds");
-        document.getElementById("y_value").value = "";
         return;
     }
 
