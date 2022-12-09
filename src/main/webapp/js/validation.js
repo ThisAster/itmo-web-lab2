@@ -1,14 +1,17 @@
 const FLOAT_REGEX = /^-?\d+(?:\.\d+)?$/;
 
-
+function enterOff() {
+    let b = event.keyCode;
+    document.forms[0].onsubmit = function() {
+        let a = 13 !== b;
+        b = "";
+        return a
+    }
+};
 
 function funcClick() {
     const x = document.getElementById("x").value;
-    const y = document.getElementById("y_value").value;
-    const r = rValue;
-    const click = document.getElementById("isClick_value").value;
-
-    if (!r) {
+    if (!rValue) {
         alert("Please select a value for R first");
         return;
     }

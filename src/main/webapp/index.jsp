@@ -56,7 +56,7 @@
           <!-- элемент, содержащий текст, при нажатии на который меняется фокус на другой элемент -->
           <label for="x">X:</label>
           <div>
-            <input title="enter a value x" name="x_coord" class="inputX" id="x" type="text" placeholder="range from -3 to 5" maxlength="5" />
+            <input title="enter a value x" name="x_coord" class="inputX" id="x" type="text" onkeydown="enterOff()" placeholder="range from -3 to 5" maxlength="5" />
           </div>
         </div>
         <div id="yTable">
@@ -98,7 +98,7 @@
             <input type="hidden" name="y_coord" id="y_value">
           </table>
         </div>
-        <div style="height: 115px" ;id="rBlock">
+        <div style="height: 115px" id="rBlock">
           <label id="labelR" for="r">R:</label>
           <table title="enter a value r" id="r">
             <tr>
@@ -186,6 +186,6 @@
     </td>
   </tr>
 </table>
-<img class="cat" src="<%= request.getContextPath()%>/img/VeC.gif">
+<img class="cat" src="<%= request.getContextPath()%>/img/VeC.gif" alt="pussy">
 </body>
 </html>
