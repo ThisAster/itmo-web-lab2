@@ -1,9 +1,9 @@
-<%@ page import="com.example.demo4.models.Results" %>
 <%@ page import="com.example.demo4.models.Point" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
   ServletContext servletContext = request.getServletContext();
-  Results results = ((Results) servletContext.getAttribute("Collection"));
+  ArrayList<Point> results = (ArrayList<Point>) servletContext.getAttribute("Collection");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,13 +15,14 @@
   <link rel="stylesheet" href="css/style.css"/>
   <script defer src="<%= request.getContextPath() %>/js/grapher.js"></script>
   <script defer src="<%= request.getContextPath() %>/js/validation.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/superagent@8.0.0/dist/superagent.min.js"></script>
 </head>
 <body>
 <script>
   const POINTS = [
     <%
       if (results == null) {
-        results = new Results();
+        results = new ArrayList<>();
       } else {
       for (int i = 0; i < results.size(); i++) {
     %>
@@ -122,6 +123,7 @@
             </tr>
           </table>
           <input type="hidden" name="r_coord" id="r_value">
+          <input type="hidden" name="is_click" id="isClick_value">
         </div>
         <div>
           <button type="button" id="sumbitButton" class="actionButton" onclick="funcClick()">check point</button>
@@ -159,6 +161,9 @@
           </th>
           <th id="rRow">
             R
+          </th>
+          <th id="formatSendRow">
+            Sending format
           </th>
           <th id="resultRow">
             Result
