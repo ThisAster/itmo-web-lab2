@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.BooleanUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +30,10 @@ public class ControllerServlet extends HttpServlet {
         if (x != null && y != null && r != null && click != null) {
             if (results == null) {
                 getServletContext().setAttribute("Collection", new ArrayList<Point>());
+            }
+            if (BooleanUtils.toBooleanObject(click) == null) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
             }
             getServletContext().getRequestDispatcher("/area").forward(req, resp);
         } else if (clear != null) {
