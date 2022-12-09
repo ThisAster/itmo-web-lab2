@@ -11,16 +11,7 @@ public class Point {
     private LocalDateTime attemptTime;
     private Double processTime;
     private Boolean hit;
-
-    public Point(double x, double y, int r, LocalDateTime attemptTime, double processTime, boolean hit) {
-        this.x = x;
-        this.y = y;
-        this.r = r;
-        this.attemptTime = attemptTime;
-        this.processTime = processTime;
-        this.hit = hit;
-    }
-
+    private Boolean isClick;
     public Point(){}
 
     public void setProcessTime(long l) {
@@ -72,11 +63,20 @@ public class Point {
         return hit;
     }
 
+    public void setClicked(Boolean isClick) {
+        this.isClick = isClick;
+    }
+
+    public Boolean isClicked() {
+        return isClick;
+    }
+
     public String toJSON() {
         return "{" +
                 "\"x\":" + "\"" + this.getX() + "\"" + "," +
                 "\"y\":" + "\"" + this.getY() + "\"" + "," +
                 "\"r\":" + "\"" + this.getR() + "\"" + "," +
+                "\"sending format\":" + "\"" + this.isClicked() + "\"" + "," +
                 "\"attemptTime\":" + "\"" + this.getAttemptTime() + "\"" + "," +
                 "\"processTime\":" + "\"" + String.valueOf(this.processTime) + "\"" + "," +
                 "\"hit\":" + "\"" + this.getHit() + "\"" +
@@ -88,6 +88,7 @@ public class Point {
                 "<td class=\"xResult\">" + x + "</td>" +
                         "<td class=\"yResult\">" + y + "</td>" +
                         "<td class=\"rResult\">" + r + "</td>" +
+                        "<td>" + (isClick ? "click" : "form") + "</td>" +
                         "<td>" + (hit ? "HIT" : "MISS") + "</td>" +
                         "<td>" + attemptTime.format(formatter) + "</td>" +
                         "<td>" + processTime/1000 + "ms" + "</td>"
