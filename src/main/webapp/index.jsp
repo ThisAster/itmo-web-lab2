@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="css/style.css"/>
   <script defer src="<%= request.getContextPath() %>/js/grapher.js"></script>
   <script defer src="<%= request.getContextPath() %>/js/validation.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/superagent@8.0.0/dist/superagent.min.js"></script>
 </head>
 <body>
 <script>
