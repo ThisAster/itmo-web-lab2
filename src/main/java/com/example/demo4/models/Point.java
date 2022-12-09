@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 @NoArgsConstructor
 public class Point {
+
     private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     @Setter @Getter
     private Double x;
@@ -24,6 +25,7 @@ public class Point {
     private Boolean hit;
     @Setter @Getter
     private Boolean isClick;
+
     public String toJSON() {
         return "{" +
                 "\"x\":" + "\"" + this.getX() + "\"" + "," +
