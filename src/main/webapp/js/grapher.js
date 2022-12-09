@@ -176,8 +176,6 @@ function setClick(newValue) {
 
 setClick("false");
 
-drawGraph();
-
 
 canvas.addEventListener('click', (e) => {
     if (!rValue) {
