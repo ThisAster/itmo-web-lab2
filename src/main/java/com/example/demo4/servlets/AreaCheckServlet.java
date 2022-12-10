@@ -2,7 +2,7 @@ package com.example.demo4.servlets;
 
 import com.example.demo4.models.Point;
 import com.example.demo4.models.Service;
-import com.example.demo4.tools.Validation;
+import com.example.demo4.tools.ValidateManager;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class AreaCheckServlet extends HttpServlet {
     Service service = new Service();
     Point point;
-    private final Validation validator = new Validation();
+    private final ValidateManager validator = new ValidateManager();
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         final long start = System.nanoTime();
         double x, y;
@@ -44,7 +44,7 @@ public class AreaCheckServlet extends HttpServlet {
 
         point = service.createPoint(x, y, r, start, isClick);
         if (!point.getIsClick()) {
-            if (!validator.validate(x, y, r)) {
+            if (validator.validate(x, y, r)) {
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 request.getRequestDispatcher("/error.jsp").forward(request, response);
                 return;
