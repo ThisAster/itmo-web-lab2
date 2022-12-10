@@ -15,9 +15,11 @@ import java.util.ArrayList;
 
 @WebServlet(name = "AreaCheckServlet", urlPatterns = "/area")
 public class AreaCheckServlet extends HttpServlet {
+
     Service service = new Service();
     Point point;
     private final ValidatorManager validator = new ValidatorManager();
+
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         final long start = System.nanoTime();

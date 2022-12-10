@@ -157,7 +157,6 @@ function rCheckboxClicked(checkbox){
         setActiveCheckbox("r", checkbox);
     }
     setR(valueToSet);
-
 }
 
 function setR(newValue) {
