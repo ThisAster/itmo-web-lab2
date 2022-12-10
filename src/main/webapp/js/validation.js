@@ -41,10 +41,8 @@ function funcClick() {
 
 }
 function domainFloat(floatNum, leftBorder, rightBorder) {
-    if(floatNum >= rightBorder || floatNum <= leftBorder) {
-        return false;
-    }
-    return true;
+    return !(floatNum >= rightBorder || floatNum <= leftBorder);
+
 }
 
 function validationFloat(strFloat) {

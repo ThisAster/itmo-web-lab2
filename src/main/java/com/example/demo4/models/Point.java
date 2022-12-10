@@ -26,18 +26,6 @@ public class Point {
     @Setter @Getter
     private Boolean isClick;
 
-    public String toJSON() {
-        return "{" +
-                "\"x\":" + "\"" + this.getX() + "\"" + "," +
-                "\"y\":" + "\"" + this.getY() + "\"" + "," +
-                "\"r\":" + "\"" + this.getR() + "\"" + "," +
-                "\"sending format\":" + "\"" + this.getIsClick() + "\"" + "," +
-                "\"attemptTime\":" + "\"" + this.getAttemptTime() + "\"" + "," +
-                "\"processTime\":" + "\"" + String.valueOf(this.processTime) + "\"" + "," +
-                "\"hit\":" + "\"" + this.getHit() + "\"" +
-                "}";
-    }
-
     public String block() {
         return
                 "<td class=\"xResult\">" + x + "</td>" +

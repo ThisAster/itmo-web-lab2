@@ -2,7 +2,6 @@ package com.example.demo4.models;
 
 public class Sector extends Shape {
 
-
     @Override
     public boolean checkHit(double x, double y, int r) {
         double radius = Math.sqrt(x * x +

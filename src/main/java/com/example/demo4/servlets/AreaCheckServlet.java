@@ -19,6 +19,7 @@ public class AreaCheckServlet extends HttpServlet {
     Point point;
     private final ValidatorManager validator = new ValidatorManager();
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         final long start = System.nanoTime();
         double x, y;
         int r;

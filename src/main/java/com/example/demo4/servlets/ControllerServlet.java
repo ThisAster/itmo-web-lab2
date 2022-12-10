@@ -21,11 +21,13 @@ public class ControllerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String x = req.getParameter("x_coord");
         String y = req.getParameter("y_coord");
         String r = req.getParameter("r_coord");
         String click = req.getParameter("is_click");
         String clear = req.getParameter("clear");
+
         ArrayList<Point> results = (ArrayList<Point>) getServletContext().getAttribute("Collection");
         if (x != null && y != null && r != null && click != null) {
             if (results == null) {
