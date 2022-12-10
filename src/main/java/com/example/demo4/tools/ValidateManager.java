@@ -16,7 +16,7 @@ public class ValidateManager {
         int r_min = 1;
         int r_max = 5;
 
-        return x >= x_min && x <= x_max && y >= y_min && y <= y_max && r >= r_min && r <= r_max;
+        return x > x_min && x < x_max && y > y_min && y < y_max && r > r_min && r < r_max;
     }
 }
 
